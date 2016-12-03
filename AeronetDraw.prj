@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment-project plugin="plugin.deploytool" plugin-version="1.0">
-  <configuration target="target.net.component" target-name=".NET Assembly" name="AeronetDraw" location="E:\AeronetInversion\AeronetDraw" file="E:\AeronetInversion\AeronetDraw\AeronetDraw.prj" preferred-package-type="package.type.exe" build-checksum="2563080560" preferred-package-location="E:\AeronetInversion\AeronetDraw\distrib">
+  <configuration target="target.net.component" target-name=".NET Assembly" name="AeronetDraw" location="E:\AeronetInversion\AeronetDraw" file="E:\AeronetInversion\AeronetDraw\AeronetDraw.prj" preferred-package-type="package.type.exe" build-checksum="2849851831" preferred-package-location="E:\AeronetInversion\AeronetDraw\distrib">
     <param.project.name>E:\AeronetInversion\AeronetDraw\AeronetDraw.prj</param.project.name>
     <param.target.type>.NET Assembly</param.target.type>
     <param.appname>AeronetDraw</param.appname>
@@ -17,8 +17,8 @@
       <warning.libname>on</warning.libname>
       <warning.demo>on</warning.demo>
     </param.warnings>
-    <param.net.framework>option.net.framework.3.5</param.net.framework>
-    <param.assembly.type>option.assembly.type.private</param.assembly.type>
+    <param.net.framework>option.net.framework.4.0</param.net.framework>
+    <param.assembly.type>option.assembly.type.shared</param.assembly.type>
     <param.encryption.key.file />
     <param.net.enable.remoting>false</param.net.enable.remoting>
     <param.net.tsa.enable>false</param.net.tsa.enable>
@@ -35,7 +35,6 @@
       <param.embed.ctf />
       <param.tbx_on_path />
       <param.warnings />
-      <param.assembly.type />
       <param.encryption.key.file />
       <param.net.enable.remoting />
       <param.net.tsa.enable />
