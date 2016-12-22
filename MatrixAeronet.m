@@ -319,7 +319,9 @@ for id=1:length(fname);
         aaod550=aaod(1)*(440/550)^aae440_675;
         ssa550=1-(aaod550/aod550);
         
-        if(aod(1) < 0.4);
+        % expend range so that the data from the good region can be
+        % calculated
+        if(aod(1) < 0);
             ssa=zeros(4,3)+NaN;
             ssa550=NaN;
             rfre=zeros(4,2)+NaN;
