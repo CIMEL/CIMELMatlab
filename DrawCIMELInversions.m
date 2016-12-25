@@ -1,0 +1,27 @@
+function[]=DrawCIMELInversions(stats_inversion,r,outputbase)
+wv=[0.44,0.67,0.87,1.02];
+strmm=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12'];
+strdd=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12';'13';'14';'15';'16';'17';'18';'19';'20';'21';'22';'23';'24';'25';'26';'27';'28';'29';'30';'31'];
+for id=datenum(2013,1,1):datenum(2013,6,1);
+    ind=find(datenum(stats_inversion(:,1:3))== id & stats_inversion(:,7) >=0.4 );
+    if(~isempty(ind));
+        subplot(2,2,1);
+        plot(wv',stats_inversion(ind,7:10)','-*');
+        set(gca,'xlim',[0.4 1.1],'xminortick','on','yminortick','on');
+        subplot(2,2,2);
+        plot(wv',stats_inversion(ind,23:26)','-*');
+        set(gca,'xlim',[0.4 1.1],'xminortick','on','yminortick','on');
+        subplot(2,2,3);
+        plot(wv',stats_inversion(ind,39:42)','-*');
+        set(gca,'xlim',[0.4 1.1],'xminortick','on','yminortick','on');
+        subplot(2,2,4);
+        semilogx(r,stats_inversion(ind,43:64));
+        set(gca,'xlim',[0.04 15.5],'xminortick','on','yminortick','on');
+        yy=stats_inversion(ind(1),1);
+        mm=stats_inversion(ind(1),2);
+        dd=stats_inversion(ind(1),3);
+%        eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_' num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+        eval(['print -dtiff ' outputbase 'fig_aeronet_inversion_' num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+        close;
+    end;
+end;

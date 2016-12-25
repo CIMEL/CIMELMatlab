@@ -1,0 +1,914 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIMELDraw</name>
+    </assembly>
+    <members>
+        <member name="T:CIMELDraw.Drawing">
+            <summary>
+            The Drawing class provides a CLS compliant, MWArray interface to the M-functions
+            contained in the files:
+            <newpara></newpara>
+            E:\AeronetInversion\AeronetDraw\DrawCIMELInversions.m
+            <newpara></newpara>
+            E:\AeronetInversion\AeronetDraw\DrawSSA.m
+            <newpara></newpara>
+            E:\AeronetInversion\AeronetDraw\DrawSSAStatistisc.m
+            <newpara></newpara>
+            E:\AeronetInversion\AeronetDraw\MatrixCIMEL.m
+            <newpara></newpara>
+            deployprint.m
+            <newpara></newpara>
+            printdlg.m
+            </summary>
+            <remarks>
+            @Version 4.0
+            </remarks>
+        </member>
+        <member name="M:CIMELDraw.Drawing.#cctor">
+            <summary internal= "true">
+            The static constructor instantiates and initializes the MATLAB Compiler Runtime
+            instance.
+            </summary>
+        </member>
+        <member name="M:CIMELDraw.Drawing.#ctor">
+            <summary>
+            Constructs a new instance of the Drawing class.
+            </summary>
+        </member>
+        <member name="M:CIMELDraw.Drawing.Finalize">
+            <summary internal= "true">
+            Class destructor called by the CLR garbage collector.
+            </summary>
+        </member>
+        <member name="M:CIMELDraw.Drawing.Dispose">
+            <summary>
+            Frees the native resources associated with this object
+            </summary>
+        </member>
+        <member name="M:CIMELDraw.Drawing.Dispose(System.Boolean)">
+            <summary internal= "true">
+            Internal dispose function
+            </summary>
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawCIMELInversions">
+             <summary>
+             Provides a void output, 0-input MWArrayinterface to the DrawCIMELInversions
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+             num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+             </remarks>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawCIMELInversions(MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 1-input MWArrayinterface to the DrawCIMELInversions
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+             num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawCIMELInversions(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 2-input MWArrayinterface to the DrawCIMELInversions
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+             num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawCIMELInversions(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 3-input MWArrayinterface to the DrawCIMELInversions
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+             num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="outputbase">Input argument #3</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawCIMELInversions(System.Int32)">
+             <summary>
+             Provides the standard 0-input MWArray interface to the DrawCIMELInversions
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+             num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawCIMELInversions(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 1-input MWArray interface to the DrawCIMELInversions
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+             num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawCIMELInversions(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 2-input MWArray interface to the DrawCIMELInversions
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+             num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawCIMELInversions(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 3-input MWArray interface to the DrawCIMELInversions
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+             num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="outputbase">Input argument #3</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA">
+             <summary>
+             Provides a void output, 0-input MWArrayinterface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 1-input MWArrayinterface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 2-input MWArrayinterface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 3-input MWArrayinterface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 4-input MWArrayinterface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <param name="region">Input argument #4</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 5-input MWArrayinterface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <param name="region">Input argument #4</param>
+             <param name="outputbase">Input argument #5</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(System.Int32)">
+             <summary>
+             Provides the standard 0-input MWArray interface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 1-input MWArray interface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 2-input MWArray interface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 3-input MWArray interface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 4-input MWArray interface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <param name="region">Input argument #4</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSA(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 5-input MWArray interface to the DrawSSA M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             ssa月平均
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <param name="region">Input argument #4</param>
+             <param name="outputbase">Input argument #5</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc">
+             <summary>
+             Provides a void output, 0-input MWArrayinterface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 1-input MWArrayinterface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 2-input MWArrayinterface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 3-input MWArrayinterface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 4-input MWArrayinterface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <param name="region">Input argument #4</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a void output, 5-input MWArrayinterface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <param name="region">Input argument #4</param>
+             <param name="outputbase">Input argument #5</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(System.Int32)">
+             <summary>
+             Provides the standard 0-input MWArray interface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 1-input MWArray interface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 2-input MWArray interface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 3-input MWArray interface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 4-input MWArray interface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <param name="region">Input argument #4</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.DrawSSAStatistisc(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 5-input MWArray interface to the DrawSSAStatistisc
+             M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             绘图
+             ssa
+             figure;
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="stats_inversion">Input argument #1</param>
+             <param name="r">Input argument #2</param>
+             <param name="year">Input argument #3</param>
+             <param name="region">Input argument #4</param>
+             <param name="outputbase">Input argument #5</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL">
+             <summary>
+             Provides a single output, 0-input MWArrayinterface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 1-input MWArrayinterface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="lat">Input argument #1</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 2-input MWArrayinterface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 3-input MWArrayinterface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <param name="input">Input argument #3</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 4-input MWArrayinterface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <param name="input">Input argument #3</param>
+             <param name="outputfile">Input argument #4</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(System.Int32)">
+             <summary>
+             Provides the standard 0-input MWArray interface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 1-input MWArray interface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="lat">Input argument #1</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 2-input MWArray interface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 3-input MWArray interface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <param name="input">Input argument #3</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 4-input MWArray interface to the MatrixCIMEL M-function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <param name="input">Input argument #3</param>
+             <param name="outputfile">Input argument #4</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.MatrixCIMEL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray[]@,MathWorks.MATLAB.NET.Arrays.MWArray[])">
+             <summary>
+             Provides an interface for the MatrixCIMEL function in which the input and output
+             arguments are specified as an array of MWArrays.
+             </summary>
+             <remarks>
+             This method will allocate and return by reference the output argument
+             array.<newpara></newpara>
+             M-Documentation:
+             读取AERONET反演产品
+             lat: the lat of the region
+             lon: the lot of the region
+             input: the base input folder of region
+             outputfile: the outputfile
+             clear;
+             move to arg
+             stns_fn='hangzhou';
+             move to arg
+             stns_id='808';
+             YearInCount=2013;
+             fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+             move the initial logic to C#
+             fout=output;
+             if ~exist(fout,'dir')
+             mkdir(fout);
+             end
+             fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return</param>
+             <param name= "argsOut">Array of MWArray output arguments</param>
+             <param name= "argsIn">Array of MWArray input arguments</param>
+            
+        </member>
+        <member name="M:CIMELDraw.Drawing.WaitForFiguresToDie">
+             <summary>
+             This method will cause a MATLAB figure window to behave as a modal dialog box.
+             The method will not return until all the figure windows associated with this
+             component have been closed.
+             </summary>
+             <remarks>
+             An application should only call this method when required to keep the
+             MATLAB figure window from disappearing.  Other techniques, such as calling
+             Console.ReadLine() from the application should be considered where
+             possible.</remarks>
+            
+        </member>
+    </members>
+</doc>

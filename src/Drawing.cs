@@ -1,13 +1,13 @@
 /*
 * MATLAB Compiler: 4.17 (R2012a)
-* Date: Thu Dec 22 00:43:56 2016
-* Arguments: "-B" "macro_default" "-W" "dotnet:AeronetDraw,Drawing,4.0," "-T" "link:lib"
-* "-d" "F:\Projects\Peach\AeronetMatlab\src" "-w" "enable:specified_file_mismatch" "-w"
+* Date: Sun Dec 25 23:14:41 2016
+* Arguments: "-B" "macro_default" "-W" "dotnet:CIMELDraw,Drawing,4.0," "-T" "link:lib"
+* "-d" "E:\AeronetInversion\AeronetDraw\src" "-w" "enable:specified_file_mismatch" "-w"
 * "enable:repeated_file" "-w" "enable:switch_ignored" "-w" "enable:missing_lib_sentinel"
 * "-w" "enable:demo_license" "-v"
-* "class{Drawing:F:\Projects\Peach\AeronetMatlab\DrawAeronetInversions.m,F:\Projects\Peach
-* \AeronetMatlab\DrawSSA.m,F:\Projects\Peach\AeronetMatlab\DrawSSAStatistisc.m,F:\Projects
-* \Peach\AeronetMatlab\MatrixAeronet.m}" 
+* "class{Drawing:E:\AeronetInversion\AeronetDraw\DrawCIMELInversions.m,E:\AeronetInversion
+* \AeronetDraw\DrawSSA.m,E:\AeronetInversion\AeronetDraw\DrawSSAStatistisc.m,E:\AeronetInv
+* ersion\AeronetDraw\MatrixCIMEL.m}" 
 */
 using System;
 using System.Reflection;
@@ -19,20 +19,20 @@ using MathWorks.MATLAB.NET.Utility;
 [assembly: System.Reflection.AssemblyKeyFile(@"")]
 #endif
 
-namespace AeronetDraw
+namespace CIMELDraw
 {
 
   /// <summary>
   /// The Drawing class provides a CLS compliant, MWArray interface to the M-functions
   /// contained in the files:
   /// <newpara></newpara>
-  /// F:\Projects\Peach\AeronetMatlab\DrawAeronetInversions.m
+  /// E:\AeronetInversion\AeronetDraw\DrawCIMELInversions.m
   /// <newpara></newpara>
-  /// F:\Projects\Peach\AeronetMatlab\DrawSSA.m
+  /// E:\AeronetInversion\AeronetDraw\DrawSSA.m
   /// <newpara></newpara>
-  /// F:\Projects\Peach\AeronetMatlab\DrawSSAStatistisc.m
+  /// E:\AeronetInversion\AeronetDraw\DrawSSAStatistisc.m
   /// <newpara></newpara>
-  /// F:\Projects\Peach\AeronetMatlab\MatrixAeronet.m
+  /// E:\AeronetInversion\AeronetDraw\MatrixCIMEL.m
   /// <newpara></newpara>
   /// deployprint.m
   /// <newpara></newpara>
@@ -61,7 +61,7 @@ namespace AeronetDraw
 
         ctfFilePath= ctfFilePath.Remove(lastDelimiter, (ctfFilePath.Length - lastDelimiter));
 
-        string ctfFileName = "AeronetDraw.ctf";
+        string ctfFileName = "CIMELDraw.ctf";
 
         Stream embeddedCtfStream = null;
 
@@ -141,7 +141,7 @@ namespace AeronetDraw
     #region Methods
 
     /// <summary>
-    /// Provides a void output, 0-input MWArrayinterface to the DrawAeronetInversions
+    /// Provides a void output, 0-input MWArrayinterface to the DrawCIMELInversions
     /// M-function.
     /// </summary>
     /// <remarks>
@@ -150,31 +150,14 @@ namespace AeronetDraw
     /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
     /// </remarks>
     ///
-    public void DrawAeronetInversions()
+    public void DrawCIMELInversions()
     {
-      mcr.EvaluateFunction(0, "DrawAeronetInversions", new MWArray[]{});
+      mcr.EvaluateFunction(0, "DrawCIMELInversions", new MWArray[]{});
     }
 
 
     /// <summary>
-    /// Provides a void output, 1-input MWArrayinterface to the DrawAeronetInversions
-    /// M-function.
-    /// </summary>
-    /// <remarks>
-    /// M-Documentation:
-    /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
-    /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
-    /// </remarks>
-    /// <param name="stats_inversion">Input argument #1</param>
-    ///
-    public void DrawAeronetInversions(MWArray stats_inversion)
-    {
-      mcr.EvaluateFunction(0, "DrawAeronetInversions", stats_inversion);
-    }
-
-
-    /// <summary>
-    /// Provides a void output, 2-input MWArrayinterface to the DrawAeronetInversions
+    /// Provides a void output, 1-input MWArrayinterface to the DrawCIMELInversions
     /// M-function.
     /// </summary>
     /// <remarks>
@@ -183,16 +166,15 @@ namespace AeronetDraw
     /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
     /// </remarks>
     /// <param name="stats_inversion">Input argument #1</param>
-    /// <param name="r">Input argument #2</param>
     ///
-    public void DrawAeronetInversions(MWArray stats_inversion, MWArray r)
+    public void DrawCIMELInversions(MWArray stats_inversion)
     {
-      mcr.EvaluateFunction(0, "DrawAeronetInversions", stats_inversion, r);
+      mcr.EvaluateFunction(0, "DrawCIMELInversions", stats_inversion);
     }
 
 
     /// <summary>
-    /// Provides a void output, 3-input MWArrayinterface to the DrawAeronetInversions
+    /// Provides a void output, 2-input MWArrayinterface to the DrawCIMELInversions
     /// M-function.
     /// </summary>
     /// <remarks>
@@ -202,17 +184,15 @@ namespace AeronetDraw
     /// </remarks>
     /// <param name="stats_inversion">Input argument #1</param>
     /// <param name="r">Input argument #2</param>
-    /// <param name="outputbase">Input argument #3</param>
     ///
-    public void DrawAeronetInversions(MWArray stats_inversion, MWArray r, MWArray 
-                                outputbase)
+    public void DrawCIMELInversions(MWArray stats_inversion, MWArray r)
     {
-      mcr.EvaluateFunction(0, "DrawAeronetInversions", stats_inversion, r, outputbase);
+      mcr.EvaluateFunction(0, "DrawCIMELInversions", stats_inversion, r);
     }
 
 
     /// <summary>
-    /// Provides the standard 0-input MWArray interface to the DrawAeronetInversions
+    /// Provides a void output, 3-input MWArrayinterface to the DrawCIMELInversions
     /// M-function.
     /// </summary>
     /// <remarks>
@@ -220,78 +200,98 @@ namespace AeronetDraw
     /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
     /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
     /// </remarks>
-    /// <param name="numArgsOut">The number of output arguments to return.</param>
-    /// <returns>An Array of length "numArgsOut" containing the output
-    /// arguments.</returns>
-    ///
-    public MWArray[] DrawAeronetInversions(int numArgsOut)
-    {
-      return mcr.EvaluateFunction(numArgsOut, "DrawAeronetInversions", new MWArray[]{});
-    }
-
-
-    /// <summary>
-    /// Provides the standard 1-input MWArray interface to the DrawAeronetInversions
-    /// M-function.
-    /// </summary>
-    /// <remarks>
-    /// M-Documentation:
-    /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
-    /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
-    /// </remarks>
-    /// <param name="numArgsOut">The number of output arguments to return.</param>
-    /// <param name="stats_inversion">Input argument #1</param>
-    /// <returns>An Array of length "numArgsOut" containing the output
-    /// arguments.</returns>
-    ///
-    public MWArray[] DrawAeronetInversions(int numArgsOut, MWArray stats_inversion)
-    {
-      return mcr.EvaluateFunction(numArgsOut, "DrawAeronetInversions", stats_inversion);
-    }
-
-
-    /// <summary>
-    /// Provides the standard 2-input MWArray interface to the DrawAeronetInversions
-    /// M-function.
-    /// </summary>
-    /// <remarks>
-    /// M-Documentation:
-    /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
-    /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
-    /// </remarks>
-    /// <param name="numArgsOut">The number of output arguments to return.</param>
-    /// <param name="stats_inversion">Input argument #1</param>
-    /// <param name="r">Input argument #2</param>
-    /// <returns>An Array of length "numArgsOut" containing the output
-    /// arguments.</returns>
-    ///
-    public MWArray[] DrawAeronetInversions(int numArgsOut, MWArray stats_inversion, 
-                                     MWArray r)
-    {
-      return mcr.EvaluateFunction(numArgsOut, "DrawAeronetInversions", stats_inversion, r);
-    }
-
-
-    /// <summary>
-    /// Provides the standard 3-input MWArray interface to the DrawAeronetInversions
-    /// M-function.
-    /// </summary>
-    /// <remarks>
-    /// M-Documentation:
-    /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
-    /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
-    /// </remarks>
-    /// <param name="numArgsOut">The number of output arguments to return.</param>
     /// <param name="stats_inversion">Input argument #1</param>
     /// <param name="r">Input argument #2</param>
     /// <param name="outputbase">Input argument #3</param>
+    ///
+    public void DrawCIMELInversions(MWArray stats_inversion, MWArray r, MWArray 
+                              outputbase)
+    {
+      mcr.EvaluateFunction(0, "DrawCIMELInversions", stats_inversion, r, outputbase);
+    }
+
+
+    /// <summary>
+    /// Provides the standard 0-input MWArray interface to the DrawCIMELInversions
+    /// M-function.
+    /// </summary>
+    /// <remarks>
+    /// M-Documentation:
+    /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+    /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+    /// </remarks>
+    /// <param name="numArgsOut">The number of output arguments to return.</param>
     /// <returns>An Array of length "numArgsOut" containing the output
     /// arguments.</returns>
     ///
-    public MWArray[] DrawAeronetInversions(int numArgsOut, MWArray stats_inversion, 
-                                     MWArray r, MWArray outputbase)
+    public MWArray[] DrawCIMELInversions(int numArgsOut)
     {
-      return mcr.EvaluateFunction(numArgsOut, "DrawAeronetInversions", stats_inversion, r, outputbase);
+      return mcr.EvaluateFunction(numArgsOut, "DrawCIMELInversions", new MWArray[]{});
+    }
+
+
+    /// <summary>
+    /// Provides the standard 1-input MWArray interface to the DrawCIMELInversions
+    /// M-function.
+    /// </summary>
+    /// <remarks>
+    /// M-Documentation:
+    /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+    /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+    /// </remarks>
+    /// <param name="numArgsOut">The number of output arguments to return.</param>
+    /// <param name="stats_inversion">Input argument #1</param>
+    /// <returns>An Array of length "numArgsOut" containing the output
+    /// arguments.</returns>
+    ///
+    public MWArray[] DrawCIMELInversions(int numArgsOut, MWArray stats_inversion)
+    {
+      return mcr.EvaluateFunction(numArgsOut, "DrawCIMELInversions", stats_inversion);
+    }
+
+
+    /// <summary>
+    /// Provides the standard 2-input MWArray interface to the DrawCIMELInversions
+    /// M-function.
+    /// </summary>
+    /// <remarks>
+    /// M-Documentation:
+    /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+    /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+    /// </remarks>
+    /// <param name="numArgsOut">The number of output arguments to return.</param>
+    /// <param name="stats_inversion">Input argument #1</param>
+    /// <param name="r">Input argument #2</param>
+    /// <returns>An Array of length "numArgsOut" containing the output
+    /// arguments.</returns>
+    ///
+    public MWArray[] DrawCIMELInversions(int numArgsOut, MWArray stats_inversion, MWArray 
+                                   r)
+    {
+      return mcr.EvaluateFunction(numArgsOut, "DrawCIMELInversions", stats_inversion, r);
+    }
+
+
+    /// <summary>
+    /// Provides the standard 3-input MWArray interface to the DrawCIMELInversions
+    /// M-function.
+    /// </summary>
+    /// <remarks>
+    /// M-Documentation:
+    /// eval(['print -dtiff e:\qa\Research_result\Ulumqi_cimel\fig_aeronet_inversion_'
+    /// num2str(yy) strmm(mm,:) strdd(dd,:) '.tiff']);
+    /// </remarks>
+    /// <param name="numArgsOut">The number of output arguments to return.</param>
+    /// <param name="stats_inversion">Input argument #1</param>
+    /// <param name="r">Input argument #2</param>
+    /// <param name="outputbase">Input argument #3</param>
+    /// <returns>An Array of length "numArgsOut" containing the output
+    /// arguments.</returns>
+    ///
+    public MWArray[] DrawCIMELInversions(int numArgsOut, MWArray stats_inversion, MWArray 
+                                   r, MWArray outputbase)
+    {
+      return mcr.EvaluateFunction(numArgsOut, "DrawCIMELInversions", stats_inversion, r, outputbase);
     }
 
 
@@ -773,8 +773,7 @@ namespace AeronetDraw
 
 
     /// <summary>
-    /// Provides a single output, 0-input MWArrayinterface to the MatrixAeronet
-    /// M-function.
+    /// Provides a single output, 0-input MWArrayinterface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -800,15 +799,14 @@ namespace AeronetDraw
     /// </remarks>
     /// <returns>An MWArray containing the first output argument.</returns>
     ///
-    public MWArray MatrixAeronet()
+    public MWArray MatrixCIMEL()
     {
-      return mcr.EvaluateFunction("MatrixAeronet", new MWArray[]{});
+      return mcr.EvaluateFunction("MatrixCIMEL", new MWArray[]{});
     }
 
 
     /// <summary>
-    /// Provides a single output, 1-input MWArrayinterface to the MatrixAeronet
-    /// M-function.
+    /// Provides a single output, 1-input MWArrayinterface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -835,15 +833,14 @@ namespace AeronetDraw
     /// <param name="lat">Input argument #1</param>
     /// <returns>An MWArray containing the first output argument.</returns>
     ///
-    public MWArray MatrixAeronet(MWArray lat)
+    public MWArray MatrixCIMEL(MWArray lat)
     {
-      return mcr.EvaluateFunction("MatrixAeronet", lat);
+      return mcr.EvaluateFunction("MatrixCIMEL", lat);
     }
 
 
     /// <summary>
-    /// Provides a single output, 2-input MWArrayinterface to the MatrixAeronet
-    /// M-function.
+    /// Provides a single output, 2-input MWArrayinterface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -871,15 +868,14 @@ namespace AeronetDraw
     /// <param name="lon">Input argument #2</param>
     /// <returns>An MWArray containing the first output argument.</returns>
     ///
-    public MWArray MatrixAeronet(MWArray lat, MWArray lon)
+    public MWArray MatrixCIMEL(MWArray lat, MWArray lon)
     {
-      return mcr.EvaluateFunction("MatrixAeronet", lat, lon);
+      return mcr.EvaluateFunction("MatrixCIMEL", lat, lon);
     }
 
 
     /// <summary>
-    /// Provides a single output, 3-input MWArrayinterface to the MatrixAeronet
-    /// M-function.
+    /// Provides a single output, 3-input MWArrayinterface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -908,15 +904,14 @@ namespace AeronetDraw
     /// <param name="input">Input argument #3</param>
     /// <returns>An MWArray containing the first output argument.</returns>
     ///
-    public MWArray MatrixAeronet(MWArray lat, MWArray lon, MWArray input)
+    public MWArray MatrixCIMEL(MWArray lat, MWArray lon, MWArray input)
     {
-      return mcr.EvaluateFunction("MatrixAeronet", lat, lon, input);
+      return mcr.EvaluateFunction("MatrixCIMEL", lat, lon, input);
     }
 
 
     /// <summary>
-    /// Provides a single output, 4-input MWArrayinterface to the MatrixAeronet
-    /// M-function.
+    /// Provides a single output, 4-input MWArrayinterface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -946,15 +941,15 @@ namespace AeronetDraw
     /// <param name="outputfile">Input argument #4</param>
     /// <returns>An MWArray containing the first output argument.</returns>
     ///
-    public MWArray MatrixAeronet(MWArray lat, MWArray lon, MWArray input, MWArray 
-                           outputfile)
+    public MWArray MatrixCIMEL(MWArray lat, MWArray lon, MWArray input, MWArray 
+                         outputfile)
     {
-      return mcr.EvaluateFunction("MatrixAeronet", lat, lon, input, outputfile);
+      return mcr.EvaluateFunction("MatrixCIMEL", lat, lon, input, outputfile);
     }
 
 
     /// <summary>
-    /// Provides the standard 0-input MWArray interface to the MatrixAeronet M-function.
+    /// Provides the standard 0-input MWArray interface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -982,14 +977,14 @@ namespace AeronetDraw
     /// <returns>An Array of length "numArgsOut" containing the output
     /// arguments.</returns>
     ///
-    public MWArray[] MatrixAeronet(int numArgsOut)
+    public MWArray[] MatrixCIMEL(int numArgsOut)
     {
-      return mcr.EvaluateFunction(numArgsOut, "MatrixAeronet", new MWArray[]{});
+      return mcr.EvaluateFunction(numArgsOut, "MatrixCIMEL", new MWArray[]{});
     }
 
 
     /// <summary>
-    /// Provides the standard 1-input MWArray interface to the MatrixAeronet M-function.
+    /// Provides the standard 1-input MWArray interface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -1018,14 +1013,14 @@ namespace AeronetDraw
     /// <returns>An Array of length "numArgsOut" containing the output
     /// arguments.</returns>
     ///
-    public MWArray[] MatrixAeronet(int numArgsOut, MWArray lat)
+    public MWArray[] MatrixCIMEL(int numArgsOut, MWArray lat)
     {
-      return mcr.EvaluateFunction(numArgsOut, "MatrixAeronet", lat);
+      return mcr.EvaluateFunction(numArgsOut, "MatrixCIMEL", lat);
     }
 
 
     /// <summary>
-    /// Provides the standard 2-input MWArray interface to the MatrixAeronet M-function.
+    /// Provides the standard 2-input MWArray interface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -1055,14 +1050,14 @@ namespace AeronetDraw
     /// <returns>An Array of length "numArgsOut" containing the output
     /// arguments.</returns>
     ///
-    public MWArray[] MatrixAeronet(int numArgsOut, MWArray lat, MWArray lon)
+    public MWArray[] MatrixCIMEL(int numArgsOut, MWArray lat, MWArray lon)
     {
-      return mcr.EvaluateFunction(numArgsOut, "MatrixAeronet", lat, lon);
+      return mcr.EvaluateFunction(numArgsOut, "MatrixCIMEL", lat, lon);
     }
 
 
     /// <summary>
-    /// Provides the standard 3-input MWArray interface to the MatrixAeronet M-function.
+    /// Provides the standard 3-input MWArray interface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -1093,15 +1088,14 @@ namespace AeronetDraw
     /// <returns>An Array of length "numArgsOut" containing the output
     /// arguments.</returns>
     ///
-    public MWArray[] MatrixAeronet(int numArgsOut, MWArray lat, MWArray lon, MWArray 
-                             input)
+    public MWArray[] MatrixCIMEL(int numArgsOut, MWArray lat, MWArray lon, MWArray input)
     {
-      return mcr.EvaluateFunction(numArgsOut, "MatrixAeronet", lat, lon, input);
+      return mcr.EvaluateFunction(numArgsOut, "MatrixCIMEL", lat, lon, input);
     }
 
 
     /// <summary>
-    /// Provides the standard 4-input MWArray interface to the MatrixAeronet M-function.
+    /// Provides the standard 4-input MWArray interface to the MatrixCIMEL M-function.
     /// </summary>
     /// <remarks>
     /// M-Documentation:
@@ -1133,16 +1127,15 @@ namespace AeronetDraw
     /// <returns>An Array of length "numArgsOut" containing the output
     /// arguments.</returns>
     ///
-    public MWArray[] MatrixAeronet(int numArgsOut, MWArray lat, MWArray lon, MWArray 
-                             input, MWArray outputfile)
+    public MWArray[] MatrixCIMEL(int numArgsOut, MWArray lat, MWArray lon, MWArray input, 
+                           MWArray outputfile)
     {
-      return mcr.EvaluateFunction(numArgsOut, "MatrixAeronet", lat, lon, input, outputfile);
+      return mcr.EvaluateFunction(numArgsOut, "MatrixCIMEL", lat, lon, input, outputfile);
     }
 
 
     /// <summary>
-    /// Provides an interface for the MatrixAeronet function in which the input and
-    /// output
+    /// Provides an interface for the MatrixCIMEL function in which the input and output
     /// arguments are specified as an array of MWArrays.
     /// </summary>
     /// <remarks>
@@ -1173,9 +1166,9 @@ namespace AeronetDraw
     /// <param name= "argsOut">Array of MWArray output arguments</param>
     /// <param name= "argsIn">Array of MWArray input arguments</param>
     ///
-    public void MatrixAeronet(int numArgsOut, ref MWArray[] argsOut, MWArray[] argsIn)
+    public void MatrixCIMEL(int numArgsOut, ref MWArray[] argsOut, MWArray[] argsIn)
     {
-      mcr.EvaluateFunction("MatrixAeronet", numArgsOut, ref argsOut, argsIn);
+      mcr.EvaluateFunction("MatrixCIMEL", numArgsOut, ref argsOut, argsIn);
     }
 
 
