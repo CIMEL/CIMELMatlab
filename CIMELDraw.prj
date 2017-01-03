@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment-project plugin="plugin.deploytool" plugin-version="1.0">
-  <configuration target="target.net.component" target-name=".NET Assembly" name="CIMELDraw" location="E:\AeronetInversion\AeronetDraw" file="E:\AeronetInversion\AeronetDraw\CIMELDraw.prj" preferred-package-type="package.type.exe" build-checksum="217179746" preferred-package-location="E:\AeronetInversion\AeronetDraw\distrib">
-    <param.project.name>E:\AeronetInversion\AeronetDraw\CIMELDraw.prj</param.project.name>
+  <configuration target="target.net.component" target-name=".NET Assembly" name="CIMELDraw" location="F:\Projects\Peach\CIMELMatlab" file="F:\Projects\Peach\CIMELMatlab\CIMELDraw.prj" preferred-package-type="package.type.exe" build-checksum="672028145" preferred-package-location="E:\AeronetInversion\AeronetDraw\distrib">
+    <param.project.name>F:\Projects\Peach\CIMELMatlab\CIMELDraw.prj</param.project.name>
     <param.target.type>.NET Assembly</param.target.type>
     <param.appname>CIMELDraw</param.appname>
     <param.intermediate>${PROJECT_ROOT}\src</param.intermediate>
@@ -31,6 +31,7 @@
     <unset>
       <param.project.name />
       <param.target.type />
+      <param.appname />
       <param.embed.ctf />
       <param.tbx_on_path />
       <param.warnings />
@@ -46,9 +47,6 @@
     <fileset.classes>
       <entity.package name="">
         <entity.class name="Drawing">
-          <file>${PROJECT_ROOT}\DrawCIMELInversions.m</file>
-          <file>${PROJECT_ROOT}\DrawSSA.m</file>
-          <file>${PROJECT_ROOT}\DrawSSAStatistisc.m</file>
           <file>${PROJECT_ROOT}\MatrixCIMEL.m</file>
         </entity.class>
       </entity.package>
@@ -58,10 +56,10 @@
       <file special-file="file.mcr" reference-mode="direct">${MATLAB_ROOT}\toolbox\compiler\deploy\win32\MCRInstaller.exe</file>
     </fileset.package>
     <build-deliverables>
-      <file name="CIMELDraw.dll" location="${PROJECT_ROOT}\distrib" optional="false">E:\AeronetInversion\AeronetDraw\distrib\CIMELDraw.dll</file>
-      <file name="CIMELDraw_overview.html" location="${PROJECT_ROOT}\distrib" optional="false">E:\AeronetInversion\AeronetDraw\distrib\CIMELDraw_overview.html</file>
-      <file name="readme.txt" location="${PROJECT_ROOT}\distrib" optional="true">E:\AeronetInversion\AeronetDraw\distrib\readme.txt</file>
-      <file name="CIMELDrawNative.dll" location="${PROJECT_ROOT}\distrib" optional="false">E:\AeronetInversion\AeronetDraw\distrib\CIMELDrawNative.dll</file>
+      <file name="readme.txt" location="${PROJECT_ROOT}\distrib" optional="true">F:\Projects\Peach\CIMELMatlab\distrib\readme.txt</file>
+      <file name="CIMELDraw.dll" location="${PROJECT_ROOT}\distrib" optional="false">F:\Projects\Peach\CIMELMatlab\distrib\CIMELDraw.dll</file>
+      <file name="CIMELDrawNative.dll" location="${PROJECT_ROOT}\distrib" optional="false">F:\Projects\Peach\CIMELMatlab\distrib\CIMELDrawNative.dll</file>
+      <file name="CIMELDraw_overview.html" location="${PROJECT_ROOT}\distrib" optional="false">F:\Projects\Peach\CIMELMatlab\distrib\CIMELDraw_overview.html</file>
     </build-deliverables>
     <workflow />
     <matlab>

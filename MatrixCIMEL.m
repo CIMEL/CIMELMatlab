@@ -105,7 +105,7 @@ for id=1:length(fname);
     fid=fopen([fpath file],'r');
     while (feof(fid)==0);
         tline=fgetl(fid);
-%         if(isempty(strfind(tline,'Residual after'))==0 && length(tline) > 30);
+%         if(isempty(findstr(tline,'Residual after'))==0 & length(tline) > 30);
 %             disp(tline);
 %             skyerr=str2num(tline(1:12));
 %         end;
@@ -123,7 +123,7 @@ for id=1:length(fname);
             ssa(iw,3)=tmp(6);
         end
         
-        if(isempty(strfind(tline,' Phase function: ( angle       total       fine      corse )'))==0 && length(tline) >30);
+        if(isempty(findstr(tline,' Phase function: ( angle       total       fine      corse )'))==0 &length(tline) >30);
 %             disp(tline);
             jw=jw+1;
             for i=1:83;
@@ -136,18 +136,18 @@ for id=1:length(fname);
             end;
         end;
         
-        if(isempty(strfind(tline,'Sun error'))==0 && length(tline) > 20);
+        if(isempty(findstr(tline,'Sun error'))==0 & length(tline) > 20);
             sunerr=str2num(tline(12:end));
 %             disp(tline);
         end;
         
        
-        if(isempty(strfind(tline,'Sky error'))==0 && length(tline) > 20);
+        if(isempty(findstr(tline,'Sky error'))==0 & length(tline) > 20);
             skyerr=str2num(tline(12:25));
 %             disp(tline);
         end;
         
-        if(isempty(strfind(tline,'r           min          max          er           eb           erb'))==0 && length(tline) > 30);
+        if(isempty(findstr(tline,'r           min          max          er           eb           erb'))==0 & length(tline) > 30);
 %             disp(tline);
             for i=1:4;
                 tline=fgetl(fid);
@@ -157,7 +157,7 @@ for id=1:length(fname);
             end
         end
         
-        if(isempty(strfind(tline,'Radius(micron)             psd'))==0 && length(tline) > 30);
+        if(isempty(findstr(tline,'Radius(micron)             psd'))==0 & length(tline) > 30);
 %             disp(tline);
             fgetl(fid);
             fgetl(fid);
@@ -170,7 +170,7 @@ for id=1:length(fname);
             end;
         end;
         
-        if(isempty(strfind(tline,'Aerosol extinction optical'))==0 && length(tline) > 30);
+        if(isempty(findstr(tline,'Aerosol extinction optical'))==0 & length(tline) > 30);
 %             disp(tline);
             fgetl(fid);
             fgetl(fid);
@@ -182,7 +182,7 @@ for id=1:length(fname);
             end
         end
         
-        if(isempty(strfind(tline,'Aerosol absorption optical'))==0 && length(tline) > 30);
+        if(isempty(findstr(tline,'Aerosol absorption optical'))==0 & length(tline) > 30);
 %             disp(tline);
             fgetl(fid);
             fgetl(fid);
@@ -194,9 +194,8 @@ for id=1:length(fname);
                 aaod(i)=tmp(2);
             end
         end
-       
 
-        if(isempty(strfind(tline,'Effective Radius'))==0 && length(tline) > 15);
+        if(isempty(findstr(tline,'Effective Radius'))==0 & length(tline) > 15);
 %             disp(tline);
             fgetl(fid);
             fgetl(fid);
@@ -207,7 +206,7 @@ for id=1:length(fname);
             end
         end
         
-        if(isempty(strfind(tline,'Volume Median'))==0 && length(tline) > 15);
+        if(isempty(findstr(tline,'Volume Median'))==0 & length(tline) > 15);
 %             disp(tline);
             fgetl(fid);
             fgetl(fid);
@@ -218,7 +217,7 @@ for id=1:length(fname);
             end
         end
         
-        if(isempty(strfind(tline,'Standard Deviation'))==0 && length(tline) > 15);
+        if(isempty(findstr(tline,'Standard Deviation'))==0 & length(tline) > 15);
 %             disp(tline);
             fgetl(fid);
             fgetl(fid);
@@ -229,7 +228,7 @@ for id=1:length(fname);
             end
         end
    
-        if(isempty(strfind(tline,'Volume concentration'))==0 && length(tline) > 15);
+        if(isempty(findstr(tline,'Volume concentration'))==0 & length(tline) > 15);
 %             disp(tline);
             fgetl(fid);
             fgetl(fid);
@@ -240,7 +239,7 @@ for id=1:length(fname);
             end
         end      
         
-        if(isempty(strfind(tline,'Sky Radiances'))==0 && length(tline) > 10);%calculate the number of sky observation angle
+        if(isempty(findstr(tline,'Sky Radiances'))==0 & length(tline) > 10);%calculate the number of sky observation angle
  %           disp(tline)
             for i=1:4;
             fgetl(fid);
@@ -258,7 +257,7 @@ for id=1:length(fname);
             nskyrad=nskyrad-1;
         end;
         
-        if(isempty(strfind(tline,'Sphericity Parameter'))==0 && length(tline) > 15);
+        if(isempty(findstr(tline,'Sphericity Parameter'))==0 & length(tline) > 15);
 %             disp(tline);
             fgetl(fid);
             tline=fgetl(fid);
@@ -266,7 +265,7 @@ for id=1:length(fname);
             sphere=tmp(1);
         end        
         
-        if(isempty(strfind(tline,'(km)  (W/m2)   (W/m2)'))==0 && length(tline) > 15);
+        if(isempty(findstr(tline,'(km)  (W/m2)   (W/m2)'))==0 & length(tline) > 15);
 %             disp(tline);
             tline=fgetl(fid);
             tmp=str2num(tline);
@@ -302,7 +301,7 @@ for id=1:length(fname);
         end        
     end; %do while
     fclose(fid);
-    if(nansum(aod)>0 && sunerr <=0.016 && skyerr <= 15 ); % sun err and sky err should meet specified requirements
+    if(nansum(aod)>0 & sunerr <=0.016 & skyerr <= 15 ); % sun err and sky err should meet specified requirements
           yy=str2num(file(end-16:end-15))+2000;
         mm=str2num(file(end-14:end-13));
         dd=str2num(file(end-12:end-11));
@@ -409,8 +408,8 @@ function theta=sunpos(yr,mon,dy,hour,mn,sc,lat,long)
             jd=dy;
         elseif mon==2;
            jd=31+dy;
-        else
-           if(mod(yr,100)==0.0 && mod(yr,400)~=0.0) 
+        else;
+           if(mod(yr,100)==0.0 & mod(yr,400)~=0.0) 
              for i=1:(mon-1);
                 year_day=year_day+month_day2(i);
              end;
@@ -464,7 +463,7 @@ jd=32916.5+delta*365.0+leap+day+hour/24;
 
 %   1st no. is mid. 0 jan 1949 minus 2.4e6; leap=leap days since 1949
 %  the last yr of century is not leap yr unless divisible by 400
-if(mod(year,100)==0.0 && mod(year,400)~=0.0) 
+if(mod(year,100)==0.0 & mod(year,400)~=0.0) 
    jd=jd-1;
 end
 
@@ -564,7 +563,7 @@ el=el/rad;
       
 if(el > 19.225)  
    refrac=.00452*3.51823/tan(el*rad);
-elseif (el > -0.766 && el < 19.225) 
+elseif (el > -0.766 & el < 19.225) 
    refrac=3.51823*(0.1594+0.0196*el+0.00002*el^2)/(1+0.505*el+0.0845*el^2);
 else
    refrac=0.0;
@@ -586,7 +585,7 @@ dec=dec/rad;
 
 %   mnlong in degs, gmst in hours, jd in days if 2.4e6 added;
 %   mnanom,eclong,oblqec,ra,and lmst in radian
-  function data=sorttime(data)
+  function data=sorttime(data);
         data2=data;
         n=length(data2(1,:));
         data2(:,n+1)=datenum(data2(:,1:6));
