@@ -1,5 +1,5 @@
 function[stats_inversion,r]=MatrixCIMEL(lat,lon,input,outputfile)
-%读取AERONET反演产品
+%璇诲彇AERONET鍙嶆紨浜у搧
 % lat: the lat of the region
 % lon: the lot of the region
 % input: the base input folder of region
@@ -68,7 +68,7 @@ fprintf(fidw,'%s',['year,mm,dd,hh,mm,ss,'...%1:6 UTC
                    'flxdn1,flxdn2,flxdn3,flxdn4,'...%86:89
                    'flxup1,flxup2,flxup3,flxup4,'...%90:93
                    'sphere,sunerr,skyerr,'......%94:96
-                   'brdf440,brdf675,brdf870,brdf1020,'...%添加brdf%97:100
+                   'brdf440,brdf675,brdf870,brdf1020,'...%娣诲姞brdf%97:100
                    'sunzenith,numskyang,']);%101,102
 fprintf(fidw,'\n');
                    
@@ -93,7 +93,7 @@ for id=1:length(fname);
     sphere=NaN;
     flxdn=zeros(1,4)+NaN;
     flxup=zeros(1,4)+NaN;
-    brdf=zeros(1,4)+NaN;   %添加brdf
+    brdf=zeros(1,4)+NaN;   %娣诲姞brdf
     theta=NaN;
     u0=NaN;
     soldst=NaN;
@@ -280,7 +280,7 @@ for id=1:length(fname);
 %z            for i=1:3;
 %z                fgetl(fid);
 %z            end;
-%添加brdf  
+%娣诲姞brdf  
              tline=fgetl(fid);
              tmp=str2num(tline);         %z  disp(tline);
              brdf=tmp;
