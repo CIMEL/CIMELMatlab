@@ -1,5 +1,5 @@
 function[stats_inversion,r]=MatrixCIMEL(lat,lon,input,outputfile)
-%∂¡»°AERONET∑¥—›≤˙∆∑
+%ËØªÂèñAERONETÂèçÊºî‰∫ßÂìÅ
 % lat: the lat of the region
 % lon: the lot of the region
 % input: the base input folder of region
@@ -63,16 +63,16 @@ fprintf(fidw,'%s',['year,mm,dd,hh,mm,ss,'...%1:6 UTC
                    'asymc440,asymc675,asymc870,asymc1020,'...%%60:63
                    '0.050,0.066,0.086,0.113,0.148,0.194,0.255,'...
                    '0.335,0.439,0.576,0.756,0.992,1.302,1.708,'...
-                   '2.241,2.940,3.857,5.051,6.641,8.713,11.43,15.00,'...%52:73 %%64:85
-                   'refft,refff,reffc,'...%74:76 %%86:88
-                   'volt,volf,volc,'...%77:79 %%89:91
-                   'rmeat,rmeaf,rmeac,'...%80:82 %%92:94
-                   'rstdt,rstdf,rstdc,'...%83:85 %%95:97
-                   'flxdn1,flxdn2,flxdn3,flxdn4,'...%86:89 %%:98:101
-                   'flxup1,flxup2,flxup3,flxup4,'...%90:93 %%102:105
-                   'sphere,sunerr,skyerr,'......%94:96 %%106:108
-                   'brdf440,brdf675,brdf870,brdf1020,'...%ÃÌº”brdf%97:100 %%109:112
-                   'sunzenith,nskyrad']);%101 %%113£∫114
+                   '2.241,2.940,3.857,5.051,6.641,8.713,11.43,15.00,'...%52:73
+                   'refft,refff,reffc,'...%74:76
+                   'volt,volf,volc,'...%77:79
+                   'rmeat,rmeaf,rmeac,'...%80:82
+                   'rstdt,rstdf,rstdc,'...%83:85
+                   'flxdn1,flxdn2,flxdn3,flxdn4,'...%86:89
+                   'flxup1,flxup2,flxup3,flxup4,'...%90:93
+                   'sphere,sunerr,skyerr,'......%94:96
+                   'brdf440,brdf675,brdf870,brdf1020,'...%Ê∑ªÂä†brdf%97:100
+                   'sunzenith,numskyang,']);%101,102
 fprintf(fidw,'\n');
                    
 stats_inversion=[];
@@ -97,7 +97,7 @@ for id=1:length(fname);
     sphere=NaN;
     flxdn=zeros(1,4)+NaN;
     flxup=zeros(1,4)+NaN;
-    brdf=zeros(1,4)+NaN;   %ÃÌº”brdf
+    brdf=zeros(1,4)+NaN;   %Ê∑ªÂä†brdf
     theta=NaN;
     u0=NaN;
     soldst=NaN;
@@ -287,7 +287,7 @@ for id=1:length(fname);
 %z            for i=1:3;
 %z                fgetl(fid);
 %z            end;
-%ÃÌº”brdf  
+%Ê∑ªÂä†brdf  
              tline=fgetl(fid);
              tmp=str2num(tline);         %z  disp(tline);
              brdf=tmp;
