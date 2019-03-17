@@ -4,9 +4,9 @@
     <param.icon />
     <param.icons />
     <param.version>2.19074</param.version>
-    <param.authnamewatermark>AYFY</param.authnamewatermark>
+    <param.authnamewatermark />
     <param.email />
-    <param.company>AYFY</param.company>
+    <param.company />
     <param.summary />
     <param.description />
     <param.screenshot />
@@ -30,7 +30,7 @@
     <param.package.mcr>true</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
     <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
-    <param.package.mcr.name>DrawInstaller_mcr</param.package.mcr.name>
+    <param.package.mcr.name>CIMELDrawInstaller</param.package.mcr.name>
     <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
     <param.windows.command.prompt>true</param.windows.command.prompt>
     <param.create.log>false</param.create.log>
@@ -45,7 +45,7 @@
     <param.net.tsa.namespace />
     <param.net.tsa.superclass>Drawing</param.net.tsa.superclass>
     <param.net.tsa.metadata />
-    <param.net.tsa.metadata.assembly>C:\Users\baker\Documents\MATLAB</param.net.tsa.metadata.assembly>
+    <param.net.tsa.metadata.assembly>C:\WINDOWS\system32</param.net.tsa.metadata.assembly>
     <param.net.saved.interface />
     <unset>
       <param.icon />
@@ -69,11 +69,8 @@
       <param.support.packages />
       <param.namespace />
       <param.classorg />
-      <param.web.mcr />
-      <param.package.mcr />
       <param.no.mcr />
       <param.web.mcr.name />
-      <param.package.mcr.name />
       <param.no.mcr.name />
       <param.windows.command.prompt />
       <param.create.log />
@@ -100,17 +97,13 @@
         </entity.class>
       </entity.package>
     </fileset.classes>
-<<<<<<< HEAD
-    <fileset.resources />
-    <fileset.depfun />
-    <fileset.package>
-      <file>${MATLAB_ROOT}\toolbox\compiler\deploy\win64\MCRInstaller.exe</file>
-    </fileset.package>
     <fileset.resources>
       <file>${MATLAB_ROOT}\toolbox\stats\stats\nansum.m</file>
     </fileset.resources>
     <fileset.depfun />
-    <fileset.package />
+    <fileset.package>
+      <file>${MATLAB_ROOT}\toolbox\compiler\deploy\win64\MCRInstaller.exe</file>
+    </fileset.package>
     <build-deliverables>
       <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="CIMELDraw.dll" optional="false">C:\Users\baker\Documents\Development\CIMEL\CIMELMatlab\CIMELDraw\for_testing\CIMELDraw.dll</file>
       <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="CIMELDrawNative.dll" optional="false">C:\Users\baker\Documents\Development\CIMEL\CIMELMatlab\CIMELDraw\for_testing\CIMELDrawNative.dll</file>

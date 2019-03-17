@@ -1,47 +1,57 @@
 function[stats_inversion,r]=MatrixCIMEL(lat,lon,input,outputfile)
-%璇诲彇AERONET鍙嶆紨浜у搧
-% lat: the lat of the region
-% lon: the lot of the region
-% input: the base input folder of region
-% outputfile: the outputfile
-%
-% % clear;
-% % move to arg
-% % stns_fn='hangzhou';
-% % move to arg
-% % stns_id='808';
-% % YearInCount=2013;
-%fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
-%fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
-% % % move the initial logic to C#
-% % % fout=output;
-% % % if ~exist(fout,'dir')
-% % %     mkdir(fout);
-% % % end
-%fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+%读取AERONET反演产品
+% lat: the lat of the region                                                     <                                                                                    -
+% lon: the lot of the region                                                     <                                                                                    -
+% input: the base input folder of region                                         <                                                                                    -
+% outputfile: the outputfile                                                     <                                                                                    -
+% 
+%clear;
+%stns_fn='BJ1046';
+%stns_id='770';
+%fout=['C:\Users\baker\CARSNET\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+%mkdir(fout);
+%fpath=['C:\Users\baker\CARSNET\AERONET_INVERSION\Main\Main\output\' stns_fn '\'];
 fpath=input;
-%fpath=['f:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\'];
-
-% % region matrix
 % stats={'Beijing';'Dunhuang';'Hefei';'Kunming';'Lasha';'Lanzhou';'Panyu';'Tongyu';'XiangHe';'Xinglong';'Huainan'};
 % stns=struct('fn',{'Tongyu','Hefei','Panyu','Kunming','Nanjing','Lasha','Dunhuang','Lanzhou','Xinglong770','Huainan','Fumin'},...
 %             'lat',{ 44.42, 31.8333, 23.000, 25.01, 32.200,29.50,40.15, 36.05, 40.396, 32.73, 25.2333},...
 %            'lon',{122.92,117.3291,113.354,102.65,118.717,91.13,94.68,103.88,117.578, 117.14, 102.500});
-% stns=struct('fn',{'ChunAn','Fuyang','Hangzhou','Jiande','LinAn','Nanjing','Tonglu','Xiaoshan','Chongqing','Pudong'},...
-%            'lat',{29.6167, 30.050, 30.23333, 29.4500, 30.2000, 32.05,    29.8000, 30.1833, 29.566, 31.22 },...
-%           'lon',{119.0125,119.950,120.17083,119.2750,119.7000,118.77083,119.6667,120.2833,106.463,121.55});
-%for is=1:length(stns);
-%    if strcmp(stns(is).fn,stns_fn)==1;
-%    ifn=is;
-%    end;
-%end;
+% stats={'Chongqing'};
+% stns=struct('fn',{'Chongqing'},...
+%             'lat',{ 29.566},...
+%            'lon',{106.463});
+% stats={'Jiaozuo'};
+% stns=struct('fn',{'Jiaozuo'},...
+%             'lat',{ 35.1833},...
+%            'lon',{113.25000});
+% stats={'Shijiazuang'};
+% stns=struct('fn',{'Shijiazuang'},...
+%             'lat',{28.0287},...
+%            'lon',{114.5254});
+% stats={'PKU'};
+% stns=struct('fn',{'PKU','BJ1043','BJ1046'},...
+%            'lat',{39.992, 39.9475, 39.9474},...
+%           'lon',{116.3102, 116.3205, 116.3205}); 
+
+% stats={'Nanqi'};
+% stns=struct('fn',{'Nanqi'},...
+%             'lat',{32.2},...
+%            'lon',{118.71667});
+       
+% for is=1:length(stns);
+%     if strcmp(stns(is).fn,stns_fn)==1;
+%     ifn=is;
+%     end;
+% end;
 stns_lat=lat;%stns(ifn).lat;
 stns_lon=lon;%stns(ifn).lon;
 
-%==strmm=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12'];
-%==strdd=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12';'13';'14';'15';'16';'17';'18';'19';'20';'21';'22';'23';'24';'25';'26';'27';'28';'29';'30';'31'];
-%fidw=fopen([fout 'Dubovik_stats_' stns_fn '_' stns_id '_20130612.dat'],'w');
-fidw=fopen(outputfile,'w');
+%strmm=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12'];
+%strdd=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12';'13';'14';'15';'16';'17';'18';'19';'20';'21';'22';'23';'24';'25';'26';'27';'28';'29';'30';'31'];
+%fidw=fopen([fout 'Dubovik_stats_' stns_fn '_' stns_id '_20130822.dat'],'w');
+
+%fidw=fopen([fout 'Dubovik_stats_' stns_fn '_20181030_asym.dat'],'w');
+fidw=fopen([fout outputfile],'w');
 fprintf(fidw,'%s',['year,mm,dd,hh,mm,ss,'...%1:6 UTC
                    'aod440,aod675,aod870,aod1020,'...%7:10
                    'aod550,'....%11
@@ -63,16 +73,16 @@ fprintf(fidw,'%s',['year,mm,dd,hh,mm,ss,'...%1:6 UTC
                    'asymc440,asymc675,asymc870,asymc1020,'...%%60:63
                    '0.050,0.066,0.086,0.113,0.148,0.194,0.255,'...
                    '0.335,0.439,0.576,0.756,0.992,1.302,1.708,'...
-                   '2.241,2.940,3.857,5.051,6.641,8.713,11.43,15.00,'...%52:73
-                   'refft,refff,reffc,'...%74:76
-                   'volt,volf,volc,'...%77:79
-                   'rmeat,rmeaf,rmeac,'...%80:82
-                   'rstdt,rstdf,rstdc,'...%83:85
-                   'flxdn1,flxdn2,flxdn3,flxdn4,'...%86:89
-                   'flxup1,flxup2,flxup3,flxup4,'...%90:93
-                   'sphere,sunerr,skyerr,'......%94:96
-                   'brdf440,brdf675,brdf870,brdf1020,'...%娣诲姞brdf%97:100
-                   'sunzenith,numskyang,']);%101,102
+                   '2.241,2.940,3.857,5.051,6.641,8.713,11.43,15.00,'...%52:73 %%64:85
+                   'refft,refff,reffc,'...%74:76 %%86:88
+                   'volt,volf,volc,'...%77:79 %%89:91
+                   'rmeat,rmeaf,rmeac,'...%80:82 %%92:94
+                   'rstdt,rstdf,rstdc,'...%83:85 %%95:97
+                   'flxdn1,flxdn2,flxdn3,flxdn4,'...%86:89 %%:98:101
+                   'flxup1,flxup2,flxup3,flxup4,'...%90:93 %%102:105
+                   'sphere,sunerr,skyerr,'......%94:96 %%106:108
+                   'brdf440,brdf675,brdf870,brdf1020,'...%添加brdf%97:100 %%109:112
+                   'sunzenith,nskyrad']);%101 %%113：114
 fprintf(fidw,'\n');
                    
 stats_inversion=[];
@@ -97,7 +107,7 @@ for id=1:length(fname);
     sphere=NaN;
     flxdn=zeros(1,4)+NaN;
     flxup=zeros(1,4)+NaN;
-    brdf=zeros(1,4)+NaN;   %娣诲姞brdf
+    brdf=zeros(1,4)+NaN;   %添加brdf
     theta=NaN;
     u0=NaN;
     soldst=NaN;
@@ -287,7 +297,7 @@ for id=1:length(fname);
 %z            for i=1:3;
 %z                fgetl(fid);
 %z            end;
-%娣诲姞brdf  
+%添加brdf  
              tline=fgetl(fid);
              tmp=str2num(tline);         %z  disp(tline);
              brdf=tmp;
