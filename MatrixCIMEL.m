@@ -51,7 +51,7 @@ stns_lon=lon;%stns(ifn).lon;
 %fidw=fopen([fout 'Dubovik_stats_' stns_fn '_' stns_id '_20130822.dat'],'w');
 
 %fidw=fopen([fout 'Dubovik_stats_' stns_fn '_20181030_asym.dat'],'w');
-fidw=fopen([fout outputfile],'w');
+fidw=fopen(outputfile,'w');
 fprintf(fidw,'%s',['year,mm,dd,hh,mm,ss,'...%1:6 UTC
                    'aod440,aod675,aod870,aod1020,'...%7:10
                    'aod550,'....%11

@@ -4,10 +4,10 @@
     <param.icon />
     <param.icons />
     <param.version>2.19074</param.version>
-    <param.authnamewatermark />
+    <param.authnamewatermark>AYFY</param.authnamewatermark>
     <param.email />
-    <param.company />
-    <param.summary />
+    <param.company>AYFY</param.company>
+    <param.summary>读取CIMEL反演产品</param.summary>
     <param.description />
     <param.screenshot />
     <param.guid />
@@ -26,10 +26,10 @@
     <param.support.packages />
     <param.namespace />
     <param.classorg />
-    <param.web.mcr>false</param.web.mcr>
-    <param.package.mcr>true</param.package.mcr>
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
-    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.web.mcr.name>CIMELDrawInstaller_web</param.web.mcr.name>
     <param.package.mcr.name>CIMELDrawInstaller</param.package.mcr.name>
     <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
     <param.windows.command.prompt>true</param.windows.command.prompt>
@@ -50,10 +50,7 @@
     <unset>
       <param.icon />
       <param.icons />
-      <param.authnamewatermark />
       <param.email />
-      <param.company />
-      <param.summary />
       <param.description />
       <param.screenshot />
       <param.guid />
@@ -69,8 +66,9 @@
       <param.support.packages />
       <param.namespace />
       <param.classorg />
+      <param.web.mcr />
+      <param.package.mcr />
       <param.no.mcr />
-      <param.web.mcr.name />
       <param.no.mcr.name />
       <param.windows.command.prompt />
       <param.create.log />
