@@ -1,81 +1,95 @@
 function[stats_inversion,r]=MatrixCIMEL(lat,lon,input,outputfile)
 %读取AERONET反演产品
-% lat: the lat of the region
-% lon: the lot of the region
-% input: the base input folder of region
-% outputfile: the outputfile
-%
-% % clear;
-% % move to arg
-% % stns_fn='hangzhou';
-% % move to arg
-% % stns_id='808';
-% % YearInCount=2013;
-%fout=['h:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\dubovik\'];
-%fout=['E:\development\CIMEL_NETWORK\' stns_fn '\dubovik\'];
-% % % move the initial logic to C#
-% % % fout=output;
-% % % if ~exist(fout,'dir')
-% % %     mkdir(fout);
-% % % end
-%fpath=['E:\QA\AERONET_INVERSION\output\' stns_fn '\'];
+% lat: the lat of the region                                                     <                                                                                    -
+% lon: the lot of the region                                                     <                                                                                    -
+% input: the base input folder of region                                         <                                                                                    -
+% outputfile: the outputfile                                                     <                                                                                    -
+% 
+%clear;
+%stns_fn='BJ1046';
+%stns_id='770';
+%fout=['C:\Users\baker\CARSNET\CIMEL_NETWORK\' stns_fn '\dubovik\'];
+%mkdir(fout);
+%fpath=['C:\Users\baker\CARSNET\AERONET_INVERSION\Main\Main\output\' stns_fn '\'];
 fpath=input;
-%fpath=['f:\CARSNET_INVERSION\CIMEL_NETWORK\' stns_fn '\'];
-
-% % region matrix
 % stats={'Beijing';'Dunhuang';'Hefei';'Kunming';'Lasha';'Lanzhou';'Panyu';'Tongyu';'XiangHe';'Xinglong';'Huainan'};
 % stns=struct('fn',{'Tongyu','Hefei','Panyu','Kunming','Nanjing','Lasha','Dunhuang','Lanzhou','Xinglong770','Huainan','Fumin'},...
 %             'lat',{ 44.42, 31.8333, 23.000, 25.01, 32.200,29.50,40.15, 36.05, 40.396, 32.73, 25.2333},...
 %            'lon',{122.92,117.3291,113.354,102.65,118.717,91.13,94.68,103.88,117.578, 117.14, 102.500});
-% stns=struct('fn',{'ChunAn','Fuyang','Hangzhou','Jiande','LinAn','Nanjing','Tonglu','Xiaoshan','Chongqing','Pudong'},...
-%            'lat',{29.6167, 30.050, 30.23333, 29.4500, 30.2000, 32.05,    29.8000, 30.1833, 29.566, 31.22 },...
-%           'lon',{119.0125,119.950,120.17083,119.2750,119.7000,118.77083,119.6667,120.2833,106.463,121.55});
-%for is=1:length(stns);
-%    if strcmp(stns(is).fn,stns_fn)==1;
-%    ifn=is;
-%    end;
-%end;
+% stats={'Chongqing'};
+% stns=struct('fn',{'Chongqing'},...
+%             'lat',{ 29.566},...
+%            'lon',{106.463});
+% stats={'Jiaozuo'};
+% stns=struct('fn',{'Jiaozuo'},...
+%             'lat',{ 35.1833},...
+%            'lon',{113.25000});
+% stats={'Shijiazuang'};
+% stns=struct('fn',{'Shijiazuang'},...
+%             'lat',{28.0287},...
+%            'lon',{114.5254});
+% stats={'PKU'};
+% stns=struct('fn',{'PKU','BJ1043','BJ1046'},...
+%            'lat',{39.992, 39.9475, 39.9474},...
+%           'lon',{116.3102, 116.3205, 116.3205}); 
+
+% stats={'Nanqi'};
+% stns=struct('fn',{'Nanqi'},...
+%             'lat',{32.2},...
+%            'lon',{118.71667});
+       
+% for is=1:length(stns);
+%     if strcmp(stns(is).fn,stns_fn)==1;
+%     ifn=is;
+%     end;
+% end;
 stns_lat=lat;%stns(ifn).lat;
 stns_lon=lon;%stns(ifn).lon;
 
-%==strmm=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12'];
-%==strdd=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12';'13';'14';'15';'16';'17';'18';'19';'20';'21';'22';'23';'24';'25';'26';'27';'28';'29';'30';'31'];
-%fidw=fopen([fout 'Dubovik_stats_' stns_fn '_' stns_id '_20130612.dat'],'w');
+%strmm=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12'];
+%strdd=['01';'02';'03';'04';'05';'06';'07';'08';'09';'10';'11';'12';'13';'14';'15';'16';'17';'18';'19';'20';'21';'22';'23';'24';'25';'26';'27';'28';'29';'30';'31'];
+%fidw=fopen([fout 'Dubovik_stats_' stns_fn '_' stns_id '_20130822.dat'],'w');
+
+%fidw=fopen([fout 'Dubovik_stats_' stns_fn '_20181030_asym.dat'],'w');
 fidw=fopen(outputfile,'w');
 fprintf(fidw,'%s',['year,mm,dd,hh,mm,ss,'...%1:6 UTC
                    'aod440,aod675,aod870,aod1020,'...%7:10
                    'aod550,'....%11
-                   'extt440,extt670,extt870,extt1020,'...%12:15
-                   'extf440,extf670,extf870,extf1020,'...%16:19
-                   'extc440,extc670,extc870,extc1020,'...%20:23
+                   'extt440,extt675,extt870,extt1020,'...%12:15
+                   'extf440,extf675,extf870,extf1020,'...%16:19
+                   'extc440,extc675,extc870,extc1020,'...%20:23
                    'ae440/870,'...%24
                    'ssat440,ssat670,ssat870,ssat1020,'...%25:28
                    'ssat550,'.....%29
-                   'ssaf440,ssaf670,ssaf870,ssaf1020,'...%30:33
-                   'ssac440,ssac670,ssac870,ssac1020,'...%34:37
+                   'ssaf440,ssaf675,ssaf870,ssaf1020,'...%30:33
+                   'ssac440,ssac675,ssac870,ssac1020,'...%34:37
                    'aaod440,aaod675,aaod870,aaod1020,'...%38:41
                    'aaod550,'....%42
                    'aae440/870,'...%43
-                   'real440,real670,real870,real1020,'...%44:47
-                   'imag440,imag670,imag870,imag1020,'...%48:51
+                   'real440,real675,real870,real1020,'...%44:47
+                   'imag440,imag675,imag870,imag1020,'...%48:51
+                   'asymt440,asymt675,asymt870,asymt1020,'...%%52:55
+                   'asymf440,asymf675,asymf870,asymf1020,'...%%56:59
+                   'asymc440,asymc675,asymc870,asymc1020,'...%%60:63
                    '0.050,0.066,0.086,0.113,0.148,0.194,0.255,'...
                    '0.335,0.439,0.576,0.756,0.992,1.302,1.708,'...
-                   '2.241,2.940,3.857,5.051,6.641,8.713,11.43,15.00,'...%52:73
-                   'refft,refff,reffc,'...%74:76
-                   'volt,volf,volc,'...%77:79
-                   'rmeat,rmeaf,rmeac,'...%80:82
-                   'rstdt,rstdf,rstdc,'...%83:85
-                   'flxdn1,flxdn2,flxdn3,flxdn4,'...%86:89
-                   'flxup1,flxup2,flxup3,flxup4,'...%90:93
-                   'sphere,sunerr,skyerr,'......%94:96
-                   'brdf440,brdf675,brdf870,brdf1020,'...%添加brdf%97:100
-                   'sunzenith,numskyang,']);%101,102
+                   '2.241,2.940,3.857,5.051,6.641,8.713,11.43,15.00,'...%52:73 %%64:85
+                   'refft,refff,reffc,'...%74:76 %%86:88
+                   'volt,volf,volc,'...%77:79 %%89:91
+                   'rmeat,rmeaf,rmeac,'...%80:82 %%92:94
+                   'rstdt,rstdf,rstdc,'...%83:85 %%95:97
+                   'flxdn1,flxdn2,flxdn3,flxdn4,'...%86:89 %%:98:101
+                   'flxup1,flxup2,flxup3,flxup4,'...%90:93 %%102:105
+                   'sphere,sunerr,skyerr,'......%94:96 %%106:108
+                   'brdf440,brdf675,brdf870,brdf1020,'...%添加brdf%97:100 %%109:112
+                   'sunzenith,nskyrad']);%101 %%113：114
 fprintf(fidw,'\n');
                    
 stats_inversion=[];
 fname=dir([fpath '*.dat']);
 for id=1:length(fname);
-% for id=1406:1406;
+    disp(id);
+    % for id=1:1;
 %========================================================
 %initialize variable
     daily_inversion=[];
@@ -134,8 +148,11 @@ for id=1:length(fname);
                 phase(i,jw,2)=tmp(3);
                 phase(i,jw,3)=tmp(4);
             end;
-        end;
-        
+            % calculate the asymmetry use the function 'cal_asym'
+            asym(jw,1)=cal_asym(ang,phase(:,jw,1));%calculate the asymmetry for total model
+            asym(jw,2)=cal_asym(ang,phase(:,jw,2));%calculate the asymmetry for fine model
+            asym(jw,3)=cal_asym(ang,phase(:,jw,3));%calculate the asymmetry for corse model
+        end;      
         if(isempty(findstr(tline,'Sun error'))==0 & length(tline) > 20);
             sunerr=str2num(tline(12:end));
 %             disp(tline);
@@ -317,16 +334,14 @@ for id=1:length(fname);
         aod550=aod(1)*(440/550)^ae440_675;
         aaod550=aaod(1)*(440/550)^aae440_675;
         ssa550=1-(aaod550/aod550);
-        
-        % expend range so that the data from the good region can be
-        % calculated
-        if(aod(1) < 0);
-            ssa=zeros(4,3)+NaN;
-            ssa550=NaN;
-            rfre=zeros(4,2)+NaN;
-            aae440_870=NaN;
-        end;
-       
+%         %---filter the AOD < 0.4---
+%         if(aod(1) < 0.4);
+%             ssa=zeros(4,3)+NaN;
+%             ssa550=NaN;
+%             rfre=zeros(4,2)+NaN;
+%             aae440_870=NaN;
+%         end;
+%        
        
 %         fprintf(fidw,'%4i,%4i,%4i,%4i,%4i,%4i,',yy,mm,dd,hh,mn,ss);
 %         fprintf(fidw,'%10.4f,%10.4f,%10.4f,%10.4f,',aod);
@@ -362,7 +377,7 @@ for id=1:length(fname);
 %         fprintf(fidw,'%10.4f',theta);%solar_zenith_angle
 %         fprintf(fidw,'\n');
         
-        daily_inversion=[yy,mm,dd,hh,mn,ss,aod,aod550,ext(:,1)',ext(:,2)',ext(:,3)',ae440_870,ssa(:,1)',ssa550,ssa(:,2)',ssa(:,3)',aaod,aaod550,aae440_870,rfre(:,1)',rfre(:,2)',dv,reff,vol,rmed,rstd,flxdn,flxup,sphere,sunerr,skyerr,brdf,theta,nskyrad];
+        daily_inversion=[yy,mm,dd,hh,mn,ss,aod,aod550,ext(:,1)',ext(:,2)',ext(:,3)',ae440_870,ssa(:,1)',ssa550,ssa(:,2)',ssa(:,3)',aaod,aaod550,aae440_870,rfre(:,1)',rfre(:,2)',asym(:,1)',asym(:,2)',asym(:,3)',dv,reff,vol,rmed,rstd,flxdn,flxup,sphere,sunerr,skyerr,brdf,theta,nskyrad];
         stats_inversion=[stats_inversion;daily_inversion];
     end;
 end;
@@ -592,5 +607,49 @@ dec=dec/rad;
         data2=sortrows(data2,n+1);
         data=data2(:,1:n);
         
+% -----------------calculate the asytmmetry--------------------        
+ function asym=cal_asym(ang,phase)
+%this function is used to calculate the asytmmetry.
+%ang is input of the angle
+%phase is input of the phase function. It can total, fine or coarse model.
+%asym is the output of the asymmetry.
+     
+%输入相函数三种分别对应'Zhangfeng.xlsx'中：total，fine，coarse。
+%输入时需要根据需要手动更改这一项：Pr0=p_total。其中p_total可以替换为p_fine/p_coarse，分别对应'Zhangfeng.xlsx'中：total，fine，coarse。
+%输出为P_g为该项函数的单次散射反照率,P_g_norm为该项函数归一化后的单次散射反照率。
 
+%数据
+%data=xlsread('Zhangfeng.xlsx');
+%初始角度
+%angle0=data(:,1);p_total=data(:,2);p_fine=data(:,3);p_coarse=data(:,4);
+%Pr0=p_total;                           %%替换项
+angle0=ang;%初始角度
+Pr0=phase;%%替换项
+
+u0_angle=cos(angle0*pi/180.0);
+%加密角度
+angle=(0.0:0.01:180.0);
+u_angle=cos(angle*pi/180.0);
+Pr01=log(Pr0);            
+Pr01=spline(u0_angle,Pr01,u_angle);
+Pr01=exp(Pr01);
+%勒让德展开项
+ n=0;
+for i=0:128     
+ l=legendre(i,u_angle,'sch');
+ l0=l(1,:);
+ Pl(i+1,:)=l0;
+ n=n+1;
+end
+%单次散射反照率
+for i=0:128
+ w1=((2*i+1)/2)*pi*mean(Pr01.*Pl(i+1,:).*sin(angle*pi/180));%勒让德（pi/(角度个数)=角度间隔）
+ ww1(i+1)=w1;
+end
+ww1_norm=ww1/ww1(1);
+
+P_g=ww1(2)/3;
+P_g_norm=ww1_norm(2)/3;
+asym=P_g_norm;
+          
 
