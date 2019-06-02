@@ -1,9 +1,9 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration file="C:\Users\baker\Documents\Development\CIMEL\CIMELMatlab\CIMELDraw.prj" location="C:\Users\baker\Documents\Development\CIMEL\CIMELMatlab" name="CIMELDraw" target="target.ezdeploy.library" target-name="Library Compiler">
+  <configuration file="C:\Users\baikangwang\Projects\CIMEL\CIMELMatlab\CIMELDraw.prj" location="C:\Users\baikangwang\Projects\CIMEL\CIMELMatlab" name="CIMELDraw" target="target.ezdeploy.library" target-name="Library Compiler">
     <param.appname>CIMELDraw</param.appname>
     <param.icon />
     <param.icons />
-    <param.version>2.19074</param.version>
+    <param.version>2.19153</param.version>
     <param.authnamewatermark>AYFY</param.authnamewatermark>
     <param.email />
     <param.company>AYFY</param.company>
@@ -19,7 +19,7 @@
     <param.intermediate>${PROJECT_ROOT}\CIMELDraw\for_testing</param.intermediate>
     <param.files.only>${PROJECT_ROOT}\CIMELDraw\for_redistribution_files_only</param.files.only>
     <param.output>${PROJECT_ROOT}\CIMELDraw\for_redistribution</param.output>
-    <param.logdir>${PROJECT_ROOT}\CIMELDraw</param.logdir>
+    <param.logdir>${PROJECT_ROOT}\logs</param.logdir>
     <param.enable.clean.build>false</param.enable.clean.build>
     <param.user.defined.mcr.options />
     <param.target.type>subtarget.net.component</param.target.type>
@@ -45,7 +45,7 @@
     <param.net.tsa.namespace />
     <param.net.tsa.superclass>Drawing</param.net.tsa.superclass>
     <param.net.tsa.metadata />
-    <param.net.tsa.metadata.assembly>C:\WINDOWS\system32</param.net.tsa.metadata.assembly>
+    <param.net.tsa.metadata.assembly>C:\Users\baikangwang\Documents\MATLAB</param.net.tsa.metadata.assembly>
     <param.net.saved.interface />
     <unset>
       <param.icon />
@@ -60,7 +60,6 @@
       <param.intermediate />
       <param.files.only />
       <param.output />
-      <param.logdir />
       <param.enable.clean.build />
       <param.user.defined.mcr.options />
       <param.support.packages />
@@ -86,11 +85,13 @@
       <param.net.saved.interface />
     </unset>
     <fileset.exports>
+      <file>${PROJECT_ROOT}\DrawMultiplelines.m</file>
       <file>${PROJECT_ROOT}\MatrixCIMEL.m</file>
     </fileset.exports>
     <fileset.classes>
       <entity.package name="">
         <entity.class name="Drawing">
+          <file>${PROJECT_ROOT}\DrawMultiplelines.m</file>
           <file>${PROJECT_ROOT}\MatrixCIMEL.m</file>
         </entity.class>
       </entity.package>
@@ -103,15 +104,22 @@
       <file>${MATLAB_ROOT}\toolbox\compiler\deploy\win64\MCRInstaller.exe</file>
     </fileset.package>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="CIMELDraw.dll" optional="false">C:\Users\baker\Documents\Development\CIMEL\CIMELMatlab\CIMELDraw\for_testing\CIMELDraw.dll</file>
-      <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="CIMELDrawNative.dll" optional="false">C:\Users\baker\Documents\Development\CIMEL\CIMELMatlab\CIMELDraw\for_testing\CIMELDrawNative.dll</file>
-      <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="CIMELDraw_overview.html" optional="false">C:\Users\baker\Documents\Development\CIMEL\CIMELMatlab\CIMELDraw\for_testing\CIMELDraw_overview.html</file>
-      <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="readme.txt" optional="true">C:\Users\baker\Documents\Development\CIMEL\CIMELMatlab\CIMELDraw\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="CIMELDrawNative.dll" optional="false">C:\Users\baikangwang\Projects\CIMEL\CIMELMatlab\CIMELDraw\for_testing\CIMELDrawNative.dll</file>
+      <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="CIMELDraw.dll" optional="false">C:\Users\baikangwang\Projects\CIMEL\CIMELMatlab\CIMELDraw\for_testing\CIMELDraw.dll</file>
+      <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="CIMELDraw_overview.html" optional="false">C:\Users\baikangwang\Projects\CIMEL\CIMELMatlab\CIMELDraw\for_testing\CIMELDraw_overview.html</file>
+      <file location="${PROJECT_ROOT}\CIMELDraw\for_testing" name="readme.txt" optional="true">C:\Users\baikangwang\Projects\CIMEL\CIMELMatlab\CIMELDraw\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Users\baker\Documents\Development\MATLAB\R2017a</root>
-      <toolboxes />
+      <root>C:\Program Files\MATLAB\R2017a</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
     </matlab>
     <platform>
       <unix>false</unix>

@@ -1,2 +1,4 @@
 CIMELDraw/
 *.log
+logs/
+figures/
