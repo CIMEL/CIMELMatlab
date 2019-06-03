@@ -1,3 +1,5 @@
+
+
 t=ones(1,10)*2
 T={[1,2,3];[4,5,6,7,8]};
 length(T)
@@ -24,3 +26,25 @@ for t=length(ts)
     ds{t}
 end
 ds
+
+
+ color=['y','m','c','r','g','b','w','k',...
+        'y','m','c','r','g','b','w','k',...
+        'y','m','c','r','g','b','w','k'];
+ color
+c=color(1:10);
+c
+c(10)
+days=['3','4'];
+ds=(1:length(days));
+days
+ds
+
+zeros(1:length(days))
+
+strdays={'2016-12-1','2016-12-2'};
+days=zeros(1:length(strdays));
+for i=1:length(strdays)
+    days(i)=day(datetime(strdays{i},'InputFormat','yyyy-MM-dd'));
+end
+days

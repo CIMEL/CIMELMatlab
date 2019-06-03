@@ -1,7 +1,14 @@
-function[file]=DrawMultiplelines(dataOptions,verb)
+function[file]=DrawMultiplelines(strTitle,dataOptions,arrDates,arrTimes,verb)
     %sample with AAOD.2017.3.1-4.data of ningbo
     %legLabels={'440','550','675','870','1020'};
-    if isempty(verb) == 1
+    %strdays={'2016-12-1','2016-12-2'};
+    %days=[1,2];
+    %times={{'1:2:44';'1:18:35';'5:19:29'};{'1:4:1';'1:19:25';'3:19:37';'5:20:41';'6:19:5';'7:18:56';'7:39:18'}};
+    %titleLabel='AAOD';
+    color=['m','c','r','g','b','w','k','y',...
+           'm','c','r','g','b','w','k','y',...
+           'm','c','r','g','b','w','k','y'];
+    if verb
         diary('draw_multiple_lines.log');
         diary on;
     else
@@ -9,15 +16,24 @@ function[file]=DrawMultiplelines(dataOptions,verb)
     end
     disp(dataOptions);
     legLabels=cell(dataOptions);
-    disp(legLabels);
-    days=[1,2];
-    strdays={'2016-12-1','2016-12-2'};
-    times={{'1:2:44';'1:18:35';'5:19:29'};{'1:4:1';'1:19:25';'3:19:37';'5:20:41';'6:19:5';'7:18:56';'7:39:18'}};
-    color=['r','g','b','k','m'];
+    
+    days=zeros(1:length(arrDates));
+    for i=1:length(arrDates)
+        days(i)=day(datetime(arrDates{i},'InputFormat','yyyy-MM-dd'));
+    end
+    disp(days);
+    
+    disp(arrDates);
+    strdays=cell(arrDates);
+    
+    disp(arrTimes);
+    times=cell(arrTimes);
+    
     %xLabel='Option Observing';
     %zLabel='Data Observed';
     %yLabel='Date (2016-12-1 to 2016-12-2)';
-    titleLabel='AAOD';
+    disp(strTitle);
+    titleLabel=strTitle;
 
     %440
     v1={[0.0636,0.0662,0.0277];
@@ -43,7 +59,7 @@ function[file]=DrawMultiplelines(dataOptions,verb)
     nd=length(days);
     D=cell(1,nd);
     for d=1:nd
-        day=days(d);
+        %day=days(d);
         D{d}=ones(1,length(times{d}))*days(d);
     end
 
@@ -64,6 +80,9 @@ function[file]=DrawMultiplelines(dataOptions,verb)
         v=cell(V{o});
         c=color(o);
         for d = 1:nd
+          disp(D{d});
+          disp(T{d});
+          disp(v{d});
           l=plot3(D{d},T{d},v{d},c);
           if d == 1
               legLines(o)=l;
