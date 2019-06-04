@@ -1,4 +1,4 @@
-function[file]=DrawMultiplelines(strTitle,dataOptions,arrDates,arrTimes,verb)
+function[file]=DrawMultiplelines(strTitle,optionDatas,dataOptions,arrDates,arrTimes,strFile,verb)
     %sample with AAOD.2017.3.1-4.data of ningbo
     %legLabels={'440','550','675','870','1020'};
     %strdays={'2016-12-1','2016-12-2'};
@@ -36,24 +36,24 @@ function[file]=DrawMultiplelines(strTitle,dataOptions,arrDates,arrTimes,verb)
     titleLabel=strTitle;
 
     %440
-    v1={[0.0636,0.0662,0.0277];
-        [0.078,0.0816,0.0662,0.0829,0.0951,0.1371,0.1398]};
+    %v1={[0.0636,0.0662,0.0277];
+    %    [0.078,0.0816,0.0662,0.0829,0.0951,0.1371,0.1398]};
 
     %550
-    v2={[0.0412,0.0394,0.0209];
-        [0.0548,0.056,0.0438,0.056,0.0641,0.0902,0.0957]};
+    %v2={[0.0412,0.0394,0.0209];
+    %    [0.0548,0.056,0.0438,0.056,0.0641,0.0902,0.0957]};
 
     %675
-    v3={[0.0276,0.0245,0.0162];
-        [0.0397,0.0397,0.03,0.0391,0.0446,0.0614,0.0676]};
+    %v3={[0.0276,0.0245,0.0162];
+    %    [0.0397,0.0397,0.03,0.0391,0.0446,0.0614,0.0676]};
 
     %870
-    v4={[0.0218,0.0193,0.0124];
-        [0.0329,0.0319,0.0225,0.0296,0.0336,0.0484,0.053]};
+    %v4={[0.0218,0.0193,0.0124];
+    %    [0.0329,0.0319,0.0225,0.0296,0.0336,0.0484,0.053]};
 
     %1020
-    v5={[0.0217,0.0211,0.0107];
-        [0.0315,0.0296,0.0196,0.0249,0.0286,0.0429,0.0467]};
+    %v5={[0.0217,0.0211,0.0107];
+    %    [0.0315,0.0296,0.0196,0.0249,0.0286,0.0429,0.0467]};
 
     % convert days to matlab days
     nd=length(days);
@@ -70,8 +70,8 @@ function[file]=DrawMultiplelines(strTitle,dataOptions,arrDates,arrTimes,verb)
         T{t}=datetime(times{t},'InputFormat','hh:mm:ss');
     end
 
-    V1={v1;v2;v3;v4;v5};
-    V=cell(V1);
+    %V1={v1;v2;v3;v4;v5};
+    V=optionDatas;%cell(V1);
 
     m=length(V);
     legLines=zeros(1,m);
@@ -104,7 +104,8 @@ function[file]=DrawMultiplelines(strTitle,dataOptions,arrDates,arrTimes,verb)
     grid on %显示坐标网格
     set(g,'position',[100 100 800 600]); %图像大小
     set(g,'visible','off');%不显示图像窗口
-    file= 'figures/multipleline.png';
-    saveas(gcf,file);%保存
+    %file= 'figures/multipleline.png';
+    saveas(gcf,strFile);%保存
+    file=strFile;
     close all; % 清除缓存，防止内存溢出
 end
