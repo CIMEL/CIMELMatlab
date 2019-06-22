@@ -86,12 +86,14 @@
     </unset>
     <fileset.exports>
       <file>${PROJECT_ROOT}\DrawMultiplelines.m</file>
+      <file>${PROJECT_ROOT}\DrawSurface.m</file>
       <file>${PROJECT_ROOT}\MatrixCIMEL.m</file>
     </fileset.exports>
     <fileset.classes>
       <entity.package name="">
         <entity.class name="Drawing">
           <file>${PROJECT_ROOT}\DrawMultiplelines.m</file>
+          <file>${PROJECT_ROOT}\DrawSurface.m</file>
           <file>${PROJECT_ROOT}\MatrixCIMEL.m</file>
         </entity.class>
       </entity.package>
