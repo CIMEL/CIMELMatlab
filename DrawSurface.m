@@ -1,9 +1,9 @@
 function[file]=DrawSurface(strTitle,optionDatas,dataOptions,arrDates,arrTimes,strFile,verb)
     %sample with AAOD.2017.3.1-4.data of ningbo
     %options=440,675,870,1020,550
-    dataOptions1=["440","550","675","870","1020"];
-    arrDates1=["2016-12-1","2016-12-2"];
-    arrTimes1=["1:2:44","1:4:1","1:18:35","1:19:25","3:19:37","5:19:29","5:20:41","6:19:5","7:18:56","7:39:18"];
+    %dataOptions1=["440","550","675","870","1020"];
+    %arrDates1=["2016-12-1","2016-12-2"];
+    %arrTimes1=["1:2:44","1:4:1","1:18:35","1:19:25","3:19:37","5:19:29","5:20:41","6:19:5","7:18:56","7:39:18"];
 %     strTitle1='AAOD';
     color=['m','c','r','g','b','w','k','y',...
            'm','c','r','g','b','w','k','y',...
@@ -14,13 +14,13 @@ function[file]=DrawSurface(strTitle,optionDatas,dataOptions,arrDates,arrTimes,st
     else
         diary off;
     end
-    disp('sample-dataoptions');
-    disp(dataOptions1)
+    %disp('sample-dataoptions');
+    %disp(dataOptions1)
     disp('input-dataoptions');
     disp(dataOptions);
     legLabels=dataOptions;
-    disp('sample-arrDates');
-    disp(arrDates1)
+    %disp('sample-arrDates');
+    %disp(arrDates1)
     disp('input-arrDates');
     disp(arrDates)
     strdays=arrDates;
@@ -29,8 +29,8 @@ function[file]=DrawSurface(strTitle,optionDatas,dataOptions,arrDates,arrTimes,st
     disp(days)
 
     % convert times to matabl datetime
-    disp('sample-arrTimes');
-    disp(arrTimes1)
+    %disp('sample-arrTimes');
+    %disp(arrTimes1)
     disp('input-arrTimes');
     disp(arrTimes)
     T=datetime(arrTimes,'InputFormat','hh:mm:ss');
@@ -60,7 +60,7 @@ function[file]=DrawSurface(strTitle,optionDatas,dataOptions,arrDates,arrTimes,st
         0.0315,0.0315,0.03055,0.0296,0.0196,0.02225,0.0249,0.0286,0.0429,0.0467;
         ];
     
-    V1={v1,v2,v3,v4,v5};
+    %V1={v1,v2,v3,v4,v5};
     V=optionDatas;
 
     m=length(V);
@@ -69,8 +69,8 @@ function[file]=DrawSurface(strTitle,optionDatas,dataOptions,arrDates,arrTimes,st
     for o=1:m
       v=V{o};
       c=color(o);
-      disp(['sample-v',o]);
-      disp(V1{o});
+      %disp(['sample-v',o]);
+      %disp(V1{o});
       disp(['input-v',o]);
       disp(v);    
       l=surf(days,T,v','FaceColor',c,'LineStyle','-', 'FaceAlpha',0.5, 'EdgeColor','none');
